@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://unpkg.com/vue@next"></script> -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>ToDo List</title>
+    <title>ToDo Listt</title>
 
     <style>
         /* Customize the label (the container) */
@@ -93,7 +93,7 @@
             </label>
         </div> -->
         <hr>
-        <h2 v-show="completedTodo.length != 0">已完成</h2>
+        <h2 v-show="completedTodo.length != 0">已完成!</h2>
         <label class="container" v-for="todo of completedTodo" :key="todo.id">
             {{todo.name}}
             <input type="checkbox" v-model="todo.isCompleted">
@@ -101,7 +101,7 @@
         </label>
         <p v-show="completedTodo.length != 0">{{completedTodo}}</p>
         <hr>
-        <h2 v-show="UncompletedTodo.length != 0">未完成</h2>
+        <h2 v-show="UncompletedTodo.length != 0">未完成!</h2>
         <label class="container" v-for="todo of UncompletedTodo" :key="todo.id">
             {{todo.name}}
             <input type="checkbox" v-model="todo.isCompleted">
