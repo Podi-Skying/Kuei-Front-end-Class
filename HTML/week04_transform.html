@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    
+    <style>
+        .box {
+            width: 200px;
+            /* height: 200px; */
+            background-color: #938;
+            transform: translate(300px, 300px) rotate(-45deg) scale(1.5);
+            transform-origin: top left;
+            /* 
+                perspective() 透視點: 有透視點才會有Z軸的遠近
+                放大縮小: scale(), scaleX(), scaleY(), scaleZ(), scale3d() (3d是用向量運算)
+                旋轉角度: rotate(), rotateX(), rotateY(), rotateZ(), rotate3d() 
+                改變位置: translate(), translateX(), translateY(), translateZ(), translate3d()
+                skew(), skewX(), skewY()
+                
+                matrix(), matrix3d()
+                matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+            */
+            overflow: auto;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!----------------------- 課程目錄 ----------------------->
+    <script src="../js/course_list.js"></script>
+    <!----------------------- 課程內容 ----------------------->
+
+    <div class="box">
+        <h3>title</h3>
+        <p>perspective() 透視點: 有透視點才會有Z軸的遠近
+            放大縮小: scale(), scaleX(), scaleY(), scaleZ(), scale3d() (3d是用向量運算)
+            旋轉角度: rotate(), rotateX(), rotateY(), rotateZ(), rotate3d() 
+            改變位置: translate(), translateX(), translateY(), translateZ(), translate3d()
+            skew(), skewX(), skewY()
+            matrix(), matrix3d()</p>
+    </div>
+
+</body>
+</html>

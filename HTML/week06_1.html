@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week06-1</title>
+
+    <style>
+        .body {
+            perspective: 800px;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #098;
+            
+            /* transform: rotate(40deg);
+            rotate: x 80deg;
+            translate: 40px 50px;
+            scale: 3 2; */
+
+            transition: .5s;
+        }
+        .box:hover {
+            rotate: x 45deg;
+            rotate: y 0.3turn;
+        }
+    </style>
+
+    <!-- Icons8網站 https://iconos8.es/line-awesome/howto 的插件 -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    
+    <!-- tailwindcss的自動選字插件 -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="fixed w-full z-10 flex py-5 px-10 bg-cyan-600 justify-between opacity-70">
+        <a href="https://www.youtube.com/channel/UC7jUZQET4XikF-ll-FP3I9w" target="_blank" class="px-3 font-bold text-white uppercase hover:scale-150">Logo</a>
+        <div>
+            <ul class="flex">
+                <li><a href="#p1" class="px-3 text-white hover:font-black hover:text-red-300">Home</a></li>
+                <li><a href="#p2" class="px-3 text-white hover:font-black hover:text-red-300">About</a></li>
+                <li><a href="#p3" class="px-3 text-white hover:font-black hover:text-red-300">Cards</a></li>
+                <li><a href="#p4" class="px-3 text-white hover:font-black hover:text-red-300">Sheet</a></li>
+                <li><a href="#p5" class="px-3 text-white hover:font-black hover:text-red-300">Info</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- <header class="relative">
+        <img src="https://picsum.photos/id/49/1200/800" alt="" class="w-full">
+        <div class="absolute inset-0 m-auto bg-white/50 w-[600px] h-fit p-7 text-center backdrop-blur rounded-xl">
+            <h1 class="text-5xl font-bold mb-5">HELLO!</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, accusamus praesentium. Architecto voluptates sit vero perferendis eligendi placeat laborum nam.</p>
+        </div>
+
+    </header> -->
+
+    <!-- Part 1 -->
+    <a name="p1" id="p1"></a>
+    <heaeder class="h-[600px] bg-gray-300 relative">
+        <img src="https://picsum.photos/id/10/1200/800" alt="" class="w-full h-full object-over">
+        <div class="absolute inset-0 m-auto bg-white/60 w-[90%] md:w-[600px] h-fit p-8 text-center backdrop-blur rounded-xl">
+            <h1 class="text-5xl font-bold mb-5">HELLO!</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, accusamus praesentium. Architecto voluptates sit vero perferendis eligendi placeat laborum nam.</p>
+        </div>
+    </heaeder>
+    <div class="box"></div>
+
+    <!-- Part 2 -->
+    <a name="p2" id="p2"></a>
+    <section class="py-32 bg-teal-50">
+        <div class="container flex flex-col sm:flex-row mx-auto flex-wrap text-center xl:text-left space-y-6 xl:space-y-16">
+            <div class="w-full text-center mb-6">
+                <h2 class="text-4xl font-bold hover:text-red-500">About&nbsp; <i class="las la-battery-three-quarters animate-pulse"></i></h2>
+            </div>
+
+            <div class="w-[75%] mx-auto sm:w-1/3 px-3 space-y-3 xl:flex items-center">
+                <div class="xl:mr-4 hover:text-red-300 duration-300"><i class="las la-cat la-7x animate-spin"></i></div>
+                <div class="space-y-3 hover:text-red-900 duration-300">
+                    <h3 class="mb-3 text-2xl hover:scale-150 hover:font-bold">Cat</h3>
+                    <p>你好啊animate-spin我覺得今天是一個很熱的天氣捷運超級無敵悶熱了啦! 電池的動畫是animate-pulse 靈魂關西正常，奇蹟很多人萬華眼睛積分任何人</p>
+                    <a href="https://www.youtube.com/" target="_blank" class="inline-block px-8 py-2 bg-cyan-400 rounded-full hover:bg-sky-600 hover:text-white hover:font-black duration-300">More</a>
+                </div>
+            </div>
+            <div class="w-[75%] mx-auto sm:w-1/3 px-3 space-y-3 xl:flex items-center">
+                <div class="xl:mr-4  hover:text-red-300"><i class="las la-paw la-7x animate-ping"></i></div>
+                <div class="space-y-3 hover:text-red-900 duration-300">
+                    <h3 class="mb-3 text-2xl hover:scale-150 hover:font-bold">Paw</h3>
+                    <p>靈魂animate-ping關西正常，奇蹟很多人萬華眼睛積分任何人，數碼相機熱線丈夫一大做法認真商務意識給予好像</p>
+                    <a href="https://www.youtube.com/" target="_blank" class="inline-block px-8 py-2 bg-cyan-400 rounded-full hover:bg-sky-600 hover:text-white hover:font-black duration-300">More</a>
+                </div>
+            </div>
+            <div class="w-[75%] mx-auto sm:w-1/3 px-3 space-y-3 xl:flex items-center">
+                <div class="xl:mr-4 hover:text-red-300"><i class="las la-crow la-7x animate-bounce"></i></div>
+                <div class="space-y-3 hover:text-red-900 duration-300">
+                    <h3 class="mb-3 text-2xl hover:scale-150 hover:font-bold">Crow</h3>
+                    <p>你好啊animate-bounce我覺得今天是一個很熱的天氣捷運超級無敵悶熱了啦 天氣今天是一個捷運超級無敵悶熱了啦</p>
+                    <a href="https://www.youtube.com/" target="_blank" class="inline-block px-8 py-2 bg-cyan-400 rounded-full hover:bg-sky-600 hover:text-white hover:font-black duration-300">More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 3 -->
+    <a name="p3" id="p3"></a>
+    <section class="py-32 bg-rose-50">
+        <div class="container flex mx-auto flex-wrap">
+            <div class="md:w-1/2 lg:w-1/4 px-2 py-3 lg:py-0">
+                <div class="h-full border border-slate-400 rounded-md overflow-hidden drop-shadow-md flex lg:flex-col">
+                    <div class="aspect-square w-1/2 lg:w-full">
+                        <img src="https://picsum.photos/id/98/800/600" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 bg-white w-1/2 lg:w-full grow flex flex-col">
+                        <h3 class="text-2xl font-bold">Card</h3>
+                        <p class="mb-auto">
+                            高中大型液晶，那裡高度將來評分超市重要教授現在警察詳細訊息，打電話。
+                            高中大型液晶，那裡高度將來評分超市重要教授現在警察詳細訊息，打電話。
+                            高中大型液晶，那裡高度將來評分超市重要教授現在警察詳細訊息，打電話。
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://www.youtube.com/" target="_blank" class="inline-block px-4 py-2 bg-sky-200 text-sm rounded hover:bg-sky-600 hover:text-white hover:font-black duration-300">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 lg:w-1/4 px-2 py-3 lg:py-0">
+                <div class="h-full border border-slate-400 rounded-md overflow-hidden drop-shadow-md flex lg:flex-col">
+                    <div class="aspect-square w-1/2 lg:w-full">
+                        <img src="https://picsum.photos/id/100/800/600" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 bg-white w-1/2 lg:w-full grow flex flex-col">
+                        <h3 class="text-2xl font-bold">Card</h3>
+                        <p class="mb-auto">
+                            高中大型液晶，那裡高
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://www.youtube.com/" target="_blank" class="inline-block px-4 py-2 bg-sky-200 text-sm rounded hover:bg-sky-600 hover:text-white hover:font-black duration-300">More</a>
+                        </div>
+                        </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 lg:w-1/4 px-2 py-3 lg:py-0">
+                <div class="h-full border border-slate-400 rounded-md overflow-hidden drop-shadow-md flex lg:flex-col">
+                    <div class="aspect-square w-1/2 lg:w-full">
+                        <img src="https://picsum.photos/id/99/800/600" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 bg-white w-1/2 lg:w-full grow flex flex-col">
+                        <h3 class="text-2xl font-bold">Card</h3>
+                        <p class="mb-auto">
+                            高中察詳細訊息，打電話。
+                            高中大型液晶，那裡高度將來評分超市重要教授現在警察詳細訊息，打電話。
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://www.youtube.com/" target="_blank" class="inline-block px-4 py-2 bg-sky-200 text-sm rounded hover:bg-sky-600 hover:text-white hover:font-black duration-300">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 lg:w-1/4 px-2 py-3 lg:py-0">
+                <div class="h-full border border-slate-400 rounded-md overflow-hidden drop-shadow-md flex lg:flex-col">
+                    <div class="aspect-square w-1/2 lg:w-full">
+                        <img src="https://picsum.photos/id/96/800/600" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 bg-white w-1/2 lg:w-full grow flex flex-col">
+                        <h3 class="text-2xl font-bold">Card</h3>
+                        <p class="mb-auto">
+                            高中大型液晶，那裡高度將來評分超市重要教授現在警察詳細訊息，打電話。
+                            高中大型液晶，那裡高度將來評分超市重要教授現在警察詳細訊息，打電話。
+                        </p>
+                        <div class="mt-3">
+                            <a href="https://www.youtube.com/" target="_blank" class="inline-block px-4 py-2 bg-sky-200 text-sm rounded hover:bg-sky-600 hover:text-white hover:font-black duration-300">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 4 -->
+    <a name="p4" id="p4"></a>
+    <section class="py-36 bg-orange-100">
+        <div class="container mx-auto">
+            <div class="w-2/3 lg:w-1/2 mx-auto">
+                <form action="" method="">
+                    <div class="mb-4">
+                        <label for="name" class="font-bold">姓名 Name :</label>
+                        <input type="text" id="name" name="name" class="outline-0 border border-orange-700 p-2 rounded w-full ring-offset-sky-100 ring-offset-4 ring-sky-800 focus:ring-2 duration-500" placeholder="Ex: 王曉明">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="font-bold">密碼 Password :</label>
+                        <input type="password" id="password" name="password" class="border border-orange-700 p-2 rounded w-full  outline-offset-4 online-dashed outline-sky-800 focus:outline-2" placeholder="Ex: Kevin0914">
+                    </div>
+                    <div class="mb-4">
+                        <label for="date" class="font-bold">日期 Date :</label>
+                        <input type="date" id="date" name="date" class="outline-0 border border-orange-700 p-2 rounded w-full outline-offset-4 online-dashed outline-sky-800 focus:outline-2 duration-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="font-bold">電郵 Email :</label>
+                        <input type="email" id="email" name="email" class="border border-orange-700 p-2 rounded w-full" placeholder="Ex: daniel@gmail.com">
+                    </div>
+                    <div class="mb-4">
+                        <label for="number" class="font-bold">數量 Quality :</label>
+                        <input type="number" id="number" name="number" class="border border-orange-700 p-2 rounded w-full" placeholder="Ex: 100">
+                    </div>
+                    <div class="mb-4">
+                        <label for="edu" class="font-bold">學歷 Eduction :</label>
+                        <select name="edu" id="edu" class="border border-orange-700 p-2 rounded w-full">
+                            <option value="國小" class="bg-yellow-100 accent-red-200">國小</option>
+                            <option value="國中" class="bg-yellow-200">國中</option>
+                            <option value="高中" class="bg-yellow-300">高中</option>
+                            <option value="大專院校" class="bg-yellow-400">大專院校</option>
+                            <option value="研究所" class="bg-yellow-500">研究所</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="gender" class="mb-2 inline-block font-bold">性別 Gender : </label>
+
+                        <input type="radio" id="male" value="男" name="gender" class="accent-orange-700">
+                        <label for="male" class="font-bold">男</label>
+
+                        <input type="radio" id="female" value="男" name="gender" class="accent-orange-700">
+                        <label for="female" class="font-bold">女</label>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 font-black">從何得知 :</label>
+
+                        <input type="checkbox" id="news" name="knows" value="新聞報導" class="accent-orange-700">
+                        <label for="news" class="font-bold">新聞報導</label>
+                        <input type="checkbox" id="news" name="knows" value="社群媒體" class="accent-orange-700">
+                        <label for="sns" class="font-bold">社群媒體</label>
+                        <input type="checkbox" id="news" name="knows" value="Podcast" class="accent-orange-700">
+                        <label for="podcast" class="font-bold">Podcast</label>
+                    </div>
+                    <div class="mb-4">
+                        <label for="content" class="mb-2 inline-block font-black">內容 Content :</label>
+                        <textarea name="content" id="content" cols="30" rows="10" class="border border-2 rounded border-orange-700 w-full p-2"></textarea>
+                    </div>
+                    <input type="submit" class="px-8 py-2 rounded bg-orange-900 text-white font-extrabold" value="送出">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 5 -->
+    <a name="p5" id="p5"></a>
+    <footer class="bg-black text-white text-center py-2">
+        COPYRIGHTS &copy; 2022 Design By Kuei
+    </footer>
+    
+</body>
+</html>

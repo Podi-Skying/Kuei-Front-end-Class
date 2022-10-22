@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .img {
+            background-image: url('https://tesla-cdn.thron.com/delivery/public/image/tesla/8a74d206-66dc-4386-8c7a-88ff32174e7d/bvlatuR/std/4096x2560/Model-S-Main-Hero-Desktop-LHD');
+            position: absolute;
+            /* top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0; */
+            inset: 0;
+            background-color: #098;
+
+            background-size: cover;
+            background-position: center;
+
+            z-index: -1;
+        }
+
+        .header {
+            position: fixed;
+            width: 100%;
+        }
+
+        .box {
+            width: 25px;
+            height: 25px;
+
+            position: fixed;
+            bottom: 5%;
+            right: 50%;
+
+            border-left: 5px solid white;
+            border-bottom: 5px solid white;
+            transform: rotate(135deg);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            padding: 15px;
+            font-size: 1rem;
+        }
+
+        a {
+            padding: 15px;
+            font-size: 1rem;
+        }
+
+        .space {
+            height: 150px;
+        }
+
+        .buttonList {
+            margin-top: 450px;
+        }
+
+        button {
+            font-size: 0.9rem;
+            margin: 20px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="img"></div>
+    <nav class=" header row">
+        <div class="logo">
+            <h1>Tesla</h1>
+        </div>
+        
+        <div class="list row">
+            <a>Model S</a>
+            <a>Model 3</a>
+            <a>Model X</a>
+            <a>Model Y</a>
+            <a>Solar Roof</a>
+            <a>Solar Panels</a>
+        </div>
+
+        <div class="list row">
+            <a>Shop</a>
+            <a>Account</a>
+            <a>Menu</a>
+        </div>
+    </nav>
+
+    <section class="column">
+        <div class="space"></div>
+        <div class="column">
+            <h1>Model S</h1>
+            <h3>Plaid</h3>
+        </div>
+        
+        <div class="buttonList row">
+            <button>CUSTOM ORDER</button>
+            <button>CUSTOM ORDER</button>
+        </div>
+
+        <div class="box"></div>
+    </section>
+
+
+    
+    
+
+</body>
+</html>

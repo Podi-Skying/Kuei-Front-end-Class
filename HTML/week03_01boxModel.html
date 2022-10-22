@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxModel</title>
+    
+    <style>
+        /* html {
+            唯一能吃到百分比%只有html
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        } */
+        .box {
+            /* 寬度可以設百分比%
+            但是高度一定要設定父層
+            否則為0 */
+
+            /* ! ! ! 滿版最好是: ! ! !
+            width: 100%;
+            height: 100vh;  */
+            /* 不建議用vw 因為右邊的滑軸也算在內 */
+            /*viewport height*/
+            /* px, %, vh, vw */
+
+            width: 200px;
+            /* height: 200px; */
+
+            /* 當內容超出區塊使用: */
+            overflow: auto;
+            /* overflow-y: scroll; */
+            background-color: #098;
+
+            /* 如果下面也有設置margin就會重疊，以比較長的為基準 */
+            /* margin: 100px 200px; */
+            /* 上下 左右 */
+            /* margin: 100px 0 200px; */
+            /* 上 左右 下 */
+            /* margin: 10px 0 200px 20px; */
+            /* 上 右 下 左 (順時鐘方向) */
+
+            /* 區塊置中 */
+            /* margin-left: auto;
+            margin-right: auto; */
+
+            /* 水平方向 */
+            margin-inline: auto;
+
+            /* 垂直方向 */
+            margin-block: 100px;
+
+            /* margin-inline-start: ;
+            margin-inline-end: ;
+            margin-inline: ;
+            margin-block-start: ;
+            margin-block-end: ;
+            margin-block: ; */
+
+        }
+    </style>
+
+</head>
+<body>
+    <!----------------------- 課程目錄 ----------------------->
+    <script src="../js/course_list.js"></script>
+    <!----------------------- 課程內容 ----------------------->
+
+    <h3>當內容超出區塊使用: overflow: auto;</h3>
+    <div class="box">
+        /* 寬度可以設百分比%
+        但是高度一定要設定父層
+        否則為0 */
+        /* 滿版最好是: 
+        width: 100%;
+        height: 100vh;  */
+        /*viewport height*/
+        /* px, %, vh, vw */
+    </div>
+    <div class="box">
+        margin重疊
+        /* 當內容超出區塊使用: */
+            /* overflow: auto; */
+            /* overflow-y: scroll; */
+            background-color: #098;
+
+            /* 如果下面也有設置margin就會重疊，以比較長的為基準 */
+            margin: 100px 200px;
+            /* 上下 左右 */
+            margin: 100px 0 200px;
+            /* 上 左右 下 */
+            margin: 10px 0 200px 20px;
+            /* 上 右 下 左 (順時鐘方向) */
+    </div>
+
+</body>
+</html>

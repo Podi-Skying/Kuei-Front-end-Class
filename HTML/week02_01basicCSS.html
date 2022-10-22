@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BasicCSS</title>
+
+    <!-- 外部樣式CSS 用html語法載入 -->
+    <!-- <link rel="stylesheet" href="../CSS/style.css"> -->
+    <!-- 外部樣式CSS 用css語法載入 載入時間點延後，建議不是主視覺的部分用這個，例如:特效 -->
+    <!-- <style>
+        @import url('../CSS/style.css');
+    </style> -->
+
+    <!-- 內部樣式CSS -->
+    <style>
+        /* 選取器 */
+        h1 {
+            color: pink;
+        }
+        .abc {
+            color: gold;
+        }
+        #xyz {
+            color: rgb(250, 109, 208);
+        }
+    </style>
+    <!-- CSS權重 specificity
+    影響範圍越少，權重越重
+    !important > 嵌入式 > id > class > tag 
+    (!important 為 最高權重) -->
+
+</head>
+<body>
+   <!----------------------- 課程目錄 ----------------------->
+   <script src="../js/course_list.js"></script>
+   <!----------------------- 課程內容 ----------------------->
+   
+    <!-- 嵌入式CSS -->
+    <h1 style="color: orangered;">title</h1>
+
+    <ul>
+        <li id="xyz">list1</li>
+        <li>list2</li>
+        <li>list3</li>
+    </ul>
+
+    <p class="abc">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        認真滑鼠說出運動對不起我現在，順利不見特別尚未貼圖推薦讓我。
+    </p>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        認真滑鼠說出運動對不起我現在，順利不見特別尚未貼圖推薦讓我。
+    </p>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        認真滑鼠說出運動對不起我現在，順利不見特別尚未貼圖推薦讓我。
+    </p>
+
+    
+
+    
+</body>
+</html>
