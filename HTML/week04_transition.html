@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    
+    <style>
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #938;
+            /* transition: 2000ms; 動畫時長 */
+            
+            transition-property: width, background-color;
+            /* 屬性 */
+            transition-duration: 600ms;
+            /* 持續時間 */
+            transition-delay: 0ms, 600ms;
+            
+            /* transition-timing-function: ; */
+
+            /* transition:
+            background-color 2000ms 500ms,
+            width 1000ms 0ms,
+            transform 1000ms 1000ms; */
+
+        }
+        /* 虛擬類別 */
+        .box:hover {
+            background-color: #098;
+            width: 400px;
+
+            transition-property: background-color, width;
+            transition-duration: 600ms;
+            transition-delay: 0s, 600ms;
+        }
+
+        .container {
+            background-color: #ccc;
+            width: 600px;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: #098;
+            margin-block: 10px;
+            transition-duration: 2000ms;
+        }
+
+        /* hover到container，裡面的item就會開始動畫 */
+        .container:hover .item {
+            width: 600px;
+        }
+
+        .ease {
+            transition-timing-function: ease;
+            /* transition-timing-function 位置跟時間的變化 */
+        }
+        .ease-out {
+            transition-timing-function: ease-out;
+        }
+        .ease-in {
+            transition-timing-function: ease-in;
+        }
+        .ease-in-out {
+            transition-timing-function: ease-in-out;
+        }
+        .linear {
+            transition-timing-function: linear;
+        }
+        .custom {
+            transition-timing-function: cubic-bezier(.54, 1.51, .95, -1.15);
+        }
+
+    </style>
+
+</head>
+<body>
+    <!----------------------- 課程目錄 ----------------------->
+    <script src="../js/course_list.js"></script>
+    <!----------------------- 課程內容 ----------------------->
+
+    <div class="box">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum adipisci saepe corporis earum repudiandae placeat obcaecati fugit maiores iure. Veniam assumenda molestiae aspernatur amet necessitatibus voluptatem ipsa laudantium neque illum.</p>
+    </div>
+    <h2>鼠標移到container，裡面的item就會開始動畫!</h2>
+    <div class="container">
+        <div class="item ease"></div>
+        <div class="item ease-out"></div>
+        <div class="item ease-in"></div>
+        <div class="item ease-in-out"></div>
+        <div class="item linear"></div>
+        <div class="item custom"></div>
+    </div>
+
+</body>
+</html>

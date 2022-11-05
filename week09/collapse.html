@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapse摺疊: 製作網頁選單</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        aside {
+            width: 400px;
+            background-color: #ccc;
+        }
+        .collapse-btn {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: #fff;
+            border-bottom: #777 solid 2px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .collapse-panel {
+            color: #fff;
+            overflow: hidden;
+            height: 0;
+            transition: 500ms;
+            padding-inline: 30px;
+            padding-block: 0px;
+            box-sizing: content-box;
+
+        }
+        .collapse-panel.active {
+            padding: 30px;
+        }
+        .arrow {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-left: 3px solid #fff;
+            border-top: 3px solid #fff;
+            transform: rotate(225deg);
+            position: relative;
+            top: 0;
+            transition: 500ms;
+        }
+        .collapse-btn.active .arrow {
+            transform: rotate(45deg);
+            top: 5px;
+        }
+        
+        .Morandi39green {
+            background-color: #2A483A;
+        }
+        .Morandi40green {
+            background-color: #4E6E62;
+        }
+        .Morandi32green {
+            background-color: #4A7056;
+        }
+        .Morandi33green {
+            background-color: #597A69;
+        }
+
+    </style>
+</head>
+<body>
+    <aside>
+        <a href="#" class="collapse-btn Morandi39green" data-panel="#panel-1">
+            Click
+            <span class="arrow"></span>
+        </a>
+        <div class="collapse-panel Morandi39green" id="panel-1">
+            <h2>hello collapse</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate veritatis aliquid illo? Rem suscipit totam autem et. Exercitationem nulla sit, consectetur quod totam illo labore impedit praesentium quia alias vel!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero fuga deserunt molestias magni rerum error recusandae exercitationem minus tenetur corporis sunt tempora officia itaque accusantium, fugit saepe ab accusamus. Placeat.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur aliquam, pariatur vitae amet recusandae culpa nihil totam officia fugiat? Vero quaerat nemo, a perferendis officiis asperiores quod. Rem, vel quis?
+            </p>
+        </div>
+
+        <a href="#" class="collapse-btn Morandi40green" data-panel="#panel-2">
+            Click
+            <span class="arrow"></span>
+        </a>
+        <div class="collapse-panel Morandi40green" id="panel-2">
+            <h2>hello collapse 2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate veritatis aliquid illo? Rem suscipit totam autem et. Exercitationem nulla sit, consectetur quod totam illo labore impedit praesentium quia alias vel!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero fuga deserunt molestias magni rerum error recusandae exercitationem minus tenetur corporis sunt tempora officia itaque accusantium, fugit saepe ab accusamus. Placeat.
+            </p>
+        </div>
+
+        <a href="#" class="collapse-btn Morandi33green" data-panel="#panel-3">
+            Click
+            <span class="arrow"></span>
+        </a>
+        <div class="collapse-panel Morandi33green" id="panel-3">
+            <h2>hello collapse 3</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate veritatis aliquid illo? Rem suscipit totam autem et. Exercitationem nulla sit, consectetur quod totam illo labore impedit praesentium quia alias vel!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero fuga deserunt molestias magni rerum error recusandae exercitationem minus tenetur corporis sunt tempora officia itaque accusantium, fugit saepe ab accusamus. Placeat.
+            </p>
+        </div>
+
+    </aside>
+    <script>
+        let collapseBtns = document.querySelectorAll('.collapse-btn');
+        // for(let collapseBtn of collapseBtns){
+        //     collapseBtn.onclick = function(){
+        //         this.classList.toggle('active');
+        //         // let panel = this.dataset.panel;
+        //         // let el = document.querySelector(panel);
+        //         let el = this.nextElementSibling;
+
+        //         el.classList.toggle('active');
+        //         console.log(el);
+        //         if(el.style.height){
+        //             el.style.height = null;
+        //         } else {
+        //             el.style.height = el.scrollHeight + 'px';
+        //             console.log(el.style.height);
+        //         }
+        //     }
+        // }
+
+        // js盡量不要用 this指標 因為有可能會亂指
+        for(let collapseBtn of collapseBtns){
+            collapseBtn.onclick = e =>{
+                console.log(e.target);
+                e.target.classList.toggle('active');
+
+                let el = e.target.nextElementSibling;
+
+                el.classList.toggle('active');
+                if(el.style.height){
+                    el.style.height = null;
+                } else {
+                    el.style.height = el.scrollHeight + 'px';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

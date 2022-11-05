@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather 2</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: blanchedalmond;
+
+        }
+        .selection {
+            margin: 100px;
+            width: 140px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            box-shadow: 0 3px 5px #d4b8b4;
+            border: 1px solid #d4b8b4;
+            background-color: #8c736f ;
+            color: #ddd0c8;
+            position: relative;
+        }
+        /*
+         .option select {
+            border: none;
+            outline: none;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            appearance: none;
+            /* -webkit-appearance: none;
+            -moz-appearance: none; */
+            /* padding-left: 20px; */
+            /* border-radius: 5px;
+        } */
+        /* .selection:after {
+            content: "";
+            width: 14px;
+            height: 8px;
+            background: rgb(38, 0, 255);
+            position: absolute;
+            right: 20px;
+            top: 41%;
+            pointer-events: none;
+        } */
+        .selection::-webkit-scrollbar-thumb{
+            background: rgb(226, 16, 16);
+            color: aqua;
+        }
+        .detailInfo {
+            
+            padding: 10px;
+            color: #8c736f;
+            font-weight: bolder;
+            /* border: 1px solid red; */
+        }
+        hr {
+            margin: 3rem 0;
+            border: 2px solid #ffffff;
+            border-radius: 10rem;
+        }
+
+        .cloumn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            font-weight: bolder;
+        }
+        .bg-lightbrown{
+            background-color: #d4b8b4;
+            border-radius: 0 0 1rem 1rem;
+        }
+        .bg-brown{
+            background-color: #8c736f;
+            border-radius: 1rem 1rem 0 0;
+            color: #dfd1ce;
+            padding: 10px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="app">
+        <select class="selection" name="" id="" v-model="city" @change="getWeather()">
+            <option selected hidden disabled value="">請選擇</option>
+            <option value="taipei">台北</option>
+            <option value="tokyo">東京</option>
+            <option value="bangkok">曼谷</option>
+            <option value="chicago">芝加哥</option>
+        </select>
+        <div class="information" v-if="city !='' ">
+            <template v-for="(data, i) of datas">
+                <hr>
+                <div class="cloumn bg-brown">
+                    {{getTS[i]}}
+                </div>
+                <div class="cloumn bg-lightbrown">
+                    <div>
+                        <img :src="` http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`" alt="">
+                    </div>
+                    <div>
+                        <div class="detailInfo">
+                            目前氣溫: {{data.main.temp}}
+                        </div>
+                        <div class="detailInfo">
+                            體感溫度: {{data.main.feels_like}}
+                        </div>
+                        <div class="detailInfo">
+                            濕度: {{data.main.humidity}}%
+                        </div>
+                        <div class="detailInfo">
+                            天氣狀況: {{data.weather[0].description}}
+                        </div>        
+                    </div>
+                </div>
+            </template>
+
+        </div>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    datas:[],
+                    city:''
+                }
+            },
+            methods:{
+                getWeather(){
+                    // console.log(this.city);
+                    let city = this.city;
+                    let url = 'https://api.openweathermap.org/data/2.5/forecast?q='+city+'&units=metric&lang=zh_TW&appid=b1ecbccd638b763d489602917ba47cc3';
+                    fetch(url)
+                    .then(res=>res.json())
+                    .then(data=>{
+                        console.log(data.list)
+                        this.datas = data.list;
+                    })
+                }
+            },
+            computed:{
+                getTS(){
+                    return this.datas.map(d =>{
+                        let myDate = new Date(d.dt * 1000);
+                        let year = myDate.getFullYear();
+                        let month = myDate.getMonth()+1;
+                        let date = myDate.getDate();
+                        let day = myDate.getDay();
+                        let hours = myDate.getHours();
+                        let minutes = myDate.getMinutes();
+                        let day_tw = ['日','一','二','三','四','五','六'];
+                        let day_us = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+                        let output = `${year}年${month}月${date}日 星期${day_tw[day]}(${day_us[day]})  ${hours}:${minutes}0`;
+                        return output;
+                    })
+                }
+            }
+
+        }).mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Vue 3.0 -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    <title>Vueeeee</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .block {
+            padding: 50px;
+            background-color: #7D6252;
+            color: #CFC3BC;
+        }
+        .img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="block">
+            <h1>01 - Basic</h1><hr>
+            價格: {{ price }},
+            數量: {{ qty }},
+            總金額共: {{ price * qty / discount }} 元!
+            <hr>
+            {{ title }}
+            <hr>
+            {{ description }}
+            <hr>
+            %{ message }%
+        </div>
+        <hr>
+        <div class="block">
+            <div v-for="data of products">
+                <h2>
+                    {{data.name}} : {{data.price}}
+                </h2>
+            </div>
+        </div>
+        <hr>
+        <!-- 這是單向綁定 v-bind:src 縮寫變下面-->
+        <div class="block">
+            <img class="img" :src="cover" alt="">
+            <a :href="link" class="">YouTube</a>
+        </div>
+        <hr>
+        <!-- 雙向綁定 -->
+        <div class="block">
+            <div>
+                <label for="">請輸入庫存數量: </label>
+                <input type="text" v-model="qty">
+            </div>
+
+            <div>
+                <label for="">請選擇性別: </label>
+                <input type="radio" v-model="gender" value="男生">
+                <input type="radio" v-model="gender" value="女生">
+                <input type="radio" v-model="gender" value="隱藏">{{ gender }}
+            </div>
+
+            <div>目前數量: {{ qty }}</div>
+            <div>
+                <hr>
+                <h2>(1)存貨狀況: </h2>
+                <div v-if="qty >= 10">數量充足</div>
+                <div v-else-if="qty > 0">即將完售</div>
+                <div v-else>補貨中</div>
+                <hr>
+                <h2>(2)存貨狀況: </h2>
+                <div v-show="qty > 10">庫存充足</div>
+                <div v-show="qty == 0">補貨中</div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    Vue.createApp({
+        // data: function(){ 縮寫就變成下面這樣
+        data (){
+            return {
+                title:'Hello Vue!',
+                description: 'lorem ipsum',
+                price: 100,
+                qty: 12,
+                cover: 'https://picsum.photos/id/98/800/600',
+                link: 'https://youtube.com',
+                discount: 2.5,
+                products:[
+                    {
+                        id: 1,
+                        name:'apple',
+                        price: 20
+                    },{
+                        id: 2,
+                        name: 'orange',
+                        price: 33
+                    },{
+                        id: 3,
+                        name: 'paper',
+                        price: 5
+                    }
+                ],
+                gender: ''
+            }
+        }
+    }).mount('#app')
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+
+    <style>
+
+        li {
+            
+            list-style: '\2665';
+            /* none,
+            預設值: disc, 空心圓點: circle, 實心正方square,
+            阿拉伯數字: decimal, 英文大寫: upper-alpha, 英文小寫: lower-alpha,
+            羅馬字母大寫: upper-roman, 羅馬字母小寫: lower-roman
+            中文數字: cjk-ideographic, 平假名: hiragana, 片假名: katakana,
+            hebrew, armenian, georgian, 希臘字母: lower-greek */
+        }
+
+        li::marker {
+            color: #f00;
+        }
+
+        h2 {
+            /* 只能計算在同一個區塊裡面的數量 */
+            counter-increment: h2;
+            display: list-item;
+            list-style-position: inside;
+        }
+        h2::marker {
+            color: #080;
+            
+            content: '\2618  #' counter(h2) ': ';
+        }
+    </style>
+</head>
+<body>
+    <!----------------------- 課程目錄 ----------------------->
+    <script src="../js/course_list.js"></script>
+    <!----------------------- 課程內容 ----------------------->
+
+    <div>
+        <h2>Title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+        <h2>Title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+        <h2>Title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+        <h2>Title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+
+    <h1>&#128557;</h1>
+    <ul>
+        <li>CSS背景 pattern 網站: <a href="https://projects.verou.me/css3patterns/" target="_blank">https://projects.verou.me/css3patterns</a></li>
+        <li>Emoji代碼網站: <a href="https://unicode-table.com/en/" target="_blank">https://unicode-table.com/en</a></li>
+    </ul>
+    
+</body>
+</html>

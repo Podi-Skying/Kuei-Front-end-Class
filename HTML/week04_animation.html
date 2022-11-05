@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    
+    <style>
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+
+        
+            animation-name: move;
+            animation-duration: 1000ms;
+            animation-delay: 500ms;
+
+            animation-iteration-count: infinite; 
+            /* 次數: 無限 */
+            animation-fill-mode: forwards;
+            /* 動畫會停在最後的地方 */
+            animation-direction: alternate;
+            /* 動畫方向: normal, reverse, alternate, alternate-reverse */
+            animation-timing-function: steps(10, end);
+            /* steps() 影格動畫，start會省略第一格，end則會顯示全部格數*/
+
+            /* animation: name duration delay iteration-count direction fill-mode timing-function; */
+            animation: go 10000ms 200ms infinite forwards alternate linear;
+
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            /* to {} */
+        }
+        @keyframes move {
+            to {
+                transform: translateX(600px);
+            }
+        }
+        @keyframes go {
+            0% {transform: translate(0)rotate(0);}
+            25% {transform: translate(85vw, 0)rotate(90deg);}
+            50% {transform: translate(85vw, 75vh)rotate(0);}
+            75% {transform: translate(0, 75vh)rotate(270deg);}
+            100% {transform: translate(0)rotate(0);}
+        }
+
+        .title:hover {
+            animation: flash 600ms infinite;
+        }
+        @keyframes flash {
+            0% {
+                opacity: 1;
+                letter-spacing: normal;
+            }
+            50% {
+                opacity: 0;
+                letter-spacing: 20px;
+            }
+            100% {
+                opacity: 1;
+                letter-spacing: normal;
+            }
+        }
+
+        /* 點擊: 只有可點選的元素可使用，例如 a、button */
+        a:focus {
+            animation: flash 600ms infinite;
+            background-color: #098;
+        }
+        button:focus {
+            animation: flash 600ms infinite;
+            background-color: #098;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <!----------------------- 課程目錄 ----------------------->
+    <script src="../js/course_list.js"></script>
+    <!----------------------- 課程內容 ----------------------->
+
+    <div class="box"></div>
+
+    <h1 class="title">title</h1>
+
+    <a href="#">Click</a>
+
+    <button>Click</button>
+
+</body>
+</html>

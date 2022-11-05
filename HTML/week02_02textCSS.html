@@ -1,0 +1,169 @@
+<!-- 宣告HTML5 -->
+<!DOCTYPE html> 
+    <!-- 開始寫html -->
+<html lang="zh-hant-tw">
+    <!-- 網頁資訊 -->
+<head>
+        <!-- 統一編碼語言 -->
+    <meta charset="UTF-8">
+        <!-- IE瀏覽器的相容性 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 手機板的瀏覽相容性 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 網頁標題 -->
+    
+        <!-- 這兩個link會加速載入字體 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- 我們從googlefonts選的字體 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400;700;900&family=Nunito:wght@200;400;700;900&display=swap" rel="stylesheet">
+        
+    <title>TextCSS</title>
+    <style>
+
+        /* 1. --------------------------------------------- */
+        .content {
+            /* / 0.5 是指透明程度 */
+            color: rgb(0 0 0 / 0.5);
+            /* 十六進位的顏色 紅色,綠色,藍色 */
+            /* color: #ff0000;
+            color: #00ff00;
+            color: #0000ff; */
+
+            /* 文字平均置中 left, center, right, justify*/
+            text-align: justify;
+            /* 句尾 靠左或右 */
+            text-align-last: right;
+            
+
+
+            /* 文字距離 */
+            /* 字母距離: */ letter-spacing: normal;
+            /* 單字距離: */ word-spacing: 10px; 
+            /* 行高: */ line-height: 50px;
+            /* 首行縮排: */ text-indent: 64px;
+
+            /* 所有網頁字體大小預設值為16px */
+            font-size: 16px;
+        }
+
+        /* 2. --------------------------------------------- */
+        /* 顏色: text-decoration-color: ; */
+        /* 樣式: text-decoration-style: ;
+            裝飾線的樣式 solid, dotted, dashed, double, wavy */
+        /* 位置: text-decoration-line: ; 
+            文字裝飾 none, underline, overline, line-through */
+        /* 大小: text-decoration-thickness: ; */
+        .tdc {
+            text-decoration: rgb(88, 210, 226) underline 3px;
+        }
+        .tds {
+            /* 裝飾線的樣式 直線solid, 圓點dotted, 虛線dashed, 雙線double, 波浪wavy */
+            text-decoration: blue underline wavy 3px;
+        }
+        .tdl {
+            text-decoration: blue overline 3px;
+        }
+        .tdt {
+            text-decoration: blue underline 5px;
+        }
+
+        /* 3. --------------------------------------------- */
+        .em {
+            font-size: 1em;
+        }
+        /* rem = root的em 
+        指有:root 跟 html 可以動rem的值*/
+        .rem {
+            font-size: 1rem;
+
+            font-weight: bold;
+            /* normal, bold, bolder, light, lighter, 100-900 */
+
+            font-size: italic;
+            /* normal, italic */
+
+            font-family: 'Nunito', 'Noto Sans TC';
+            /* serif 襯線字 */
+            /* sans-serif 非襯線字 */
+            /* 字體要加上引號，要先套英文 Nunito 再套中文 Noto Sans TC 字體 */
+        }
+        .line {
+            background-color: gray;
+            width: 100%;
+            height: 3px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!----------------------- 課程目錄 ----------------------->
+    <script src="../js/course_list.js"></script>
+    <!----------------------- 課程內容 ----------------------->
+    <div class="line"></div>
+
+    <h1>CSS text語法</h1>
+    <div class="line"></div>
+
+    <h3>1. 文字顏色與排版</h3>
+    <p class="content">
+        color: rgb(0 0 0 / 0.5);
+        /* / 0.5 是指透明程度 */
+        /* 十六進位的顏色 紅色,綠色,藍色 */
+        /* color: #ff0000;
+        color: #00ff00;
+        color: #0000ff; */
+
+        /* 文字平均置中 left, center, right, justify*/
+        text-align: justify;
+        /* 句尾 靠左或右 */
+        text-align-last: right;
+        
+
+
+        /* 文字距離 */
+        /* 字母距離: */ letter-spacing: normal;
+        /* 單字距離: */ word-spacing: 10px; 
+        /* 行高: */ line-height: 50px;
+        /* 首行縮排: */ text-indent: 64px;
+
+        /* 所有網頁字體大小預設值為16px */
+        font-size: 16px;
+    </p>
+    <div class="line"></div>
+
+    <h3>2. 文字線條裝飾</h3>
+    <p>text-decoration: red overline dotted 2px;</p>
+    <p class="tdc">顏色: text-decoration-color: ;</p>
+    <p class="tds">樣式: text-decoration-style: ;</p>
+    <p class="tdl">位置: text-decoration-line: ;</p>
+    <p class="tdt">大小: text-decoration-thickness: ;</p>
+    <div class="line"></div>
+    
+    <h3>3. 字體及其大小</h3>
+    <h4>(1) em</h4>
+    <div class="em">font-size: 1em;</div>
+    <h4>(2) rem</h4>
+    <div class="rem">
+        font-size: 1em;<br>
+        rem = root的em<br>
+        只有 :root 跟 html 可以動rem的值
+    </div>
+    <p>
+        font-weight: bold;
+        /* normal, bold, bolder, light, lighter, 100-900 */
+
+        font-size: italic;
+        /* normal, italic */
+
+        font-family: 'Nunito', 'Noto Sans TC';
+        /* serif 襯線字 */
+        /* sans-serif 非襯線字 */
+        /* 字體要加上引號，要先套英文 Nunito 再套中文 Noto Sans TC 字體 */
+    </p>
+
+
+    
+</body>
+</html>

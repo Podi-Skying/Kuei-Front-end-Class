@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+        /* 
+            屬性選取器
+
+            ^= 代表開頭 為
+            $= 代表結尾 為
+            *= 代表包含 
+        */
+        [class^="box"] {
+            width: 200px;
+            height: 200px;
+        }
+
+        .box-1 {
+            background-color: #fa0;
+            position: relative;
+            /* top, bottom, left, right, z-index */
+            top: 100px;
+            right: 0;
+            z-index: 10;
+        }
+        .box-2 {
+            background-color: #098;
+            position: relative;
+        }
+        .box-3 {
+            background-color: #333;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .container {
+            width: 800px;
+            height: 2000px;
+            
+            position: relative;
+        }
+
+        .fixed {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(91, 21, 221);
+            position: fixed;
+            right: 50px;
+            bottom: 300px;
+        }
+
+        .sticky {
+            width: 100%;
+            height: 200px;
+            background-image: url('http://picsum.photos/id/15/800/600');
+            background-size: cover;
+            position: sticky;
+            top: 100px;
+            bottom: 0;
+        }
+
+        /* ----------------------------------------------- */
+
+        body {
+            position: absolute;
+            /* top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0; */
+            inset: 0;
+            background-color: #098;
+
+            background-image: url('http://picsum.photos/id/888/800/600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .center {
+            width: 200px;
+            height: fit-content;
+            background-color: rgb(1, 219, 248);
+
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            padding: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <!----------------------- 課程目錄 ----------------------->
+    <script src="../js/course_list.js"></script>
+    <!----------------------- 課程內容 ----------------------->
+
+    <!-- 
+        定位 position 類別:
+
+        靜態 static
+        相對 relative
+        絕對 absolute
+        固定 fixed : 不被其他定位影響，選定在畫面
+        黏性 sticky
+     -->
+
+    
+
+    <div class="box-1"></div>
+    <div class="box-2"></div>
+
+    <div class="sticky"></div>
+
+    <div class="container">
+        <div class="box-3"></div>
+    </div>
+
+    <div class="fixed"></div>
+
+    <div class="center">
+        <h3>title</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, vitae, pariatur corporis necessitatibus repellat voluptatibus cumque consequatur corrupti qui, nulla ab consectetur ea. Et dolor sunt consequatur quibusdam, qui nihil?</p>
+    </div>
+
+</body>
+</html>

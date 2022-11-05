@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格教學頁面</title>
+</head>
+<body>
+   <!----------------------- 課程目錄 ----------------------->
+   <script src="../js/course_list.js"></script>
+   <!----------------------- 課程內容 ----------------------->
+
+    <h1>標題: Table</h1>
+
+    <table border="1" width="600" height="400">
+        <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+        </tr>
+        <tr>
+            <td><img src="http://picsum.photos/200/200?random=5" alt=""></td>
+            <td><img src="http://picsum.photos/200/200?random=6" alt=""></td>
+            <td><img src="http://picsum.photos/200/200?random=7" alt=""></td>
+            <!-- 列合併: 它會往下列多一格 -->
+            <td rowspan="2"><img src="http://picsum.photos/200/400?random=8" alt=""></td>
+        </tr>
+        <tr>
+            <!-- 欄合併 它會往左欄多一格-->
+            <td colspan="2"><img src="https://picsum.photos/seed/picsum/400/200" alt=""></td>
+    
+            <td><img src="https://picsum.photos/200/200?grayscale" alt=""></td>
+            
+        </tr>
+    </table>
+    <table border="1" width="600" height="400">
+        <thead>
+            <tr>
+                <!-- th是粗體置中的字體元素 -->
+                <th>標題1</th>
+                <th>標題2</th>
+                <th>標題3</th>
+                <th>標題4</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4">備註</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th>粗體字A</th>
+                <th>粗體字B</th>
+                <th>粗體字C</th>
+                <th>粗體字D</th>
+            </tr>
+            <tr>
+                <td>細體內文E</td>
+                <td>細體內文F</td>
+                <td>細體內文G</td>
+                <td rowspan="2">細體內文H</td>
+            </tr>
+            <tr>
+                <td colspan="2">細體內文I</td>
+                <td>細體內文K</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</body>
+</html>

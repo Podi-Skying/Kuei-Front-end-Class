@@ -1,0 +1,15 @@
+
+p {
+    color: seagreen;
+}
+
+p:hover {
+    color: rgb(255, 13, 126);
+    transform: scale(20);
+}
+
+#xyz {
+    color: blueviolet;
+    text-decoration: none;
+    /* list-style: none; */
+}
